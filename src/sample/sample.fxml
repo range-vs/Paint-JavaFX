@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+         <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#saveImage" text="Сохранить как..." />
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="О программе" />
+                  <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#menuExit" text="Выход" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="45.0" prefWidth="100.0">
+               <children>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" selected="true" userData="0">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toolsPaint" />
+                     </toggleGroup>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/rect.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" prefHeight="33.0" prefWidth="39.0" toggleGroup="$toolsPaint" userData="1">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" x="80.0">
+                           <image>
+                              <Image url="@icons/ellipse.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="100.0">
+               <children>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="-4">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/no_form.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="3">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/triangle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="100.0">
+               <children>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="4">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/five_angle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="5">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/six_angle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="41.0" prefWidth="100.0">
+               <children>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="2">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/line.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="-3">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/pencil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="44.0" prefWidth="100.0">
+               <children>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="-1">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/fill.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton focusTraversable="false" mnemonicParsing="false" onMouseClicked="#paintToolClick" toggleGroup="$toolsPaint" userData="-2">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/clear.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <Pane prefHeight="100.0" prefWidth="675.0" BorderPane.alignment="CENTER" fx:id="test">
+         <children>
+            <Slider fx:id="sliderStrokeWidth" blockIncrement="1.0" layoutX="130.0" layoutY="20.0" max="500.0" min="1.0" onMouseClicked="#sliderClick" onMouseDragged="#sliderDraggin" showTickMarks="true" value="1.0" />
+            <Label fx:id="sliderStrokeWidthLabel" layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="113.0" text="Толщина линии: 1" />
+            <Label fx:id="colorPickerFillLabel" layoutX="14.0" layoutY="45.0" prefHeight="17.0" prefWidth="113.0" text="Цвет заполнителя:" />
+            <ColorPicker fx:id="colorPickerFill" layoutX="129.0" layoutY="41.0" prefHeight="25.0" prefWidth="136.0" />
+            <CheckBox fx:id="isFill" layoutX="270.0" layoutY="45.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="102.0" text="Заполнитель" />
+            <Label fx:id="colorPickerStokeLabel" layoutX="14.0" layoutY="75.0" prefHeight="17.0" prefWidth="113.0" text="Цвет контура:" />
+            <ColorPicker fx:id="colorPickerStroke" layoutX="129.0" layoutY="71.0" prefHeight="25.0" prefWidth="136.0" />
+         </children></Pane>
+   </bottom>
+   <center>
+      <Pane fx:id="panelParentDraw" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvasDrawElement" height="280.0" onMouseDragged="#mouseMoved" onMousePressed="#mouseClickOnDrawPanel" onMouseReleased="#mouseRelease" width="480.0" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

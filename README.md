@@ -1,8 +1,7 @@
 # Paint JavaFX
-Analog paint for JavaFX
+# Analog paint for JavaFX
 
 This project using this list pattern's:
-
-Factory method
-Singleton
-Prototype
+1)Factory method
+2) Singleton
+3) Prototype

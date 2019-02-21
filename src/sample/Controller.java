@@ -156,7 +156,6 @@ public class Controller {
     }
 
     public void mouseClickOnDrawPanel(MouseEvent mouseEvent) {
-        System.out.println("mouse click");
         isSave = true;
         //snapshot = canvasDrawElement.snapshot(null, null);
         x1 = mouseEvent.getX();
@@ -361,6 +360,5 @@ public class Controller {
 
 }
 
-// TODO: сделать в рендере массив операций(заливка, фигура)
+// TODO: сделать в рендере массив операций(заливка, фигура) -- разработать новую модель
 // TODO: добавление текста на картинку
-// TODO: добавить рядом с бегунком толщины цифровую шкалу

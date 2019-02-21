@@ -70,6 +70,10 @@ public class Render {
         }while(true);
     }
 
+    public void reflash(Image img, GraphicsContext gr){
+        gr.drawImage(img, 0,0);
+    }
+
     public void draw(int type, double x1, double y1, double x2, double y2, GraphicsContext gr){
         if(!isInit)
             return;
@@ -134,8 +138,14 @@ public class Render {
         gr.setLineJoin(StrokeLineJoin.ROUND);
         gr.setStroke(cl);
         gr.setLineWidth(strokeWidth);
+        //gr.lineTo(x1, y1);
         gr.lineTo(x1, y1);
+
         gr.stroke();
+
+
+        /*gr.setFill(cl);
+        gr.fillOval(x1, y1, strokeWidth, strokeWidth);*/
     }
 
     public void addPointPath(int x2, int y2, GraphicsContext gr){
@@ -149,5 +159,9 @@ public class Render {
         if(!isInit)
             return;
         gr.closePath();
+    }
+
+    public int getStrokeWidth(){
+        return strokeWidth;
     }
 }

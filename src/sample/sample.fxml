@@ -9,6 +9,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
@@ -18,13 +19,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
          <Menu mnemonicParsing="false" text="Файл">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#saveImage" text="Сохранить как..." />
+                  <MenuItem mnemonicParsing="false" onAction="#openImage" text="Открыть" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveImage" text="Сохранить как..." />
                   <MenuItem mnemonicParsing="false" onAction="#about" text="О программе" />
                   <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#menuExit" text="Выход" />
             </items>
@@ -167,21 +169,22 @@
       </VBox>
    </left>
    <bottom>
-      <Pane prefHeight="100.0" prefWidth="675.0" BorderPane.alignment="CENTER" fx:id="test">
+      <Pane fx:id="test" prefHeight="100.0" prefWidth="675.0" BorderPane.alignment="CENTER">
          <children>
             <Slider fx:id="sliderStrokeWidth" blockIncrement="1.0" layoutX="130.0" layoutY="20.0" max="500.0" min="1.0" onMouseClicked="#sliderClick" onMouseDragged="#sliderDraggin" showTickMarks="true" value="1.0" />
-            <Label fx:id="sliderStrokeWidthLabel" layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="113.0" text="Толщина линии: 1" />
+            <Label fx:id="sliderStrokeWidthLabel" layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="113.0" text="Толщина линии:" />
             <Label fx:id="colorPickerFillLabel" layoutX="14.0" layoutY="45.0" prefHeight="17.0" prefWidth="113.0" text="Цвет заполнителя:" />
             <ColorPicker fx:id="colorPickerFill" layoutX="129.0" layoutY="41.0" prefHeight="25.0" prefWidth="136.0" />
             <CheckBox fx:id="isFill" layoutX="270.0" layoutY="45.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="102.0" text="Заполнитель" />
             <Label fx:id="colorPickerStokeLabel" layoutX="14.0" layoutY="75.0" prefHeight="17.0" prefWidth="113.0" text="Цвет контура:" />
             <ColorPicker fx:id="colorPickerStroke" layoutX="129.0" layoutY="71.0" prefHeight="25.0" prefWidth="136.0" />
+            <TextField fx:id="valueSliderStrokeWidth" layoutX="270.0" layoutY="17.0" prefHeight="0.0" prefWidth="92.0" text="1"  />
          </children></Pane>
    </bottom>
    <center>
       <Pane fx:id="panelParentDraw" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Canvas fx:id="canvasDrawElement" height="280.0" onMouseDragged="#mouseMoved" onMousePressed="#mouseClickOnDrawPanel" onMouseReleased="#mouseRelease" width="480.0" />
+            <Canvas fx:id="canvasDrawElement" height="280.0" onMouseDragged="#mouseDraggered" onMouseExited="#mouseExited" onMouseMoved="#mouseMoved" onMousePressed="#mouseClickOnDrawPanel" onMouseReleased="#mouseRelease" width="480.0" />
          </children>
       </Pane>
    </center>
